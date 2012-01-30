@@ -1,0 +1,69 @@
+<div id="aside" class="clearfix">
+    <nav class="side-nav">
+        <h1>Search</h1>
+        <form action="/search/" method="get" id="">
+            <input type="text" name="query" placeholder="I'm looking for...">
+            <input class="button" type="submit" value="検索">
+        </form>
+    </nav>
+  <% if about = Snippet("about") %>
+    <section class="side-nav">
+        <h1>About Me</h1>
+        <%= about.body %>
+        <ul class="social-icon clearfix">
+          <% [:rss,:twitter,:facebook,:github,:aboutme].each do |service| %>
+            <li>
+                <%= social_image_tag service %>
+                <span><%= service.capitalize %></span>
+            </li>
+          <% end %>
+        </ul>
+    </section>
+  <% end %>
+    <nav class="side-nav">
+        <h1>Recent Entries</h1>
+        <ul>
+          <% Post.recent(5).each do |post| %>
+            <li><%= link_to post.title, post.link %></li>
+          <% end %>
+        </ul>
+    </nav>
+    <nav class="side-nav">
+        <h1>Tags</h1>
+        <ul>
+          <% Tag.all.each do |tag| %>
+            <li><%= link_to tag.name, tag.link %></li>
+          <% end %>
+        </ul>
+    </nav>
+    <nav class="side-nav archives">
+        <h1>Archives</h1>
+        <ul>
+          <% months.each do |m| %>
+            <li><%= link_to "#{m.year}年#{m.month}月", "/#{m.year}/#{m.month}/" %></li>
+          <% end %>
+        </ul>
+    </nav>
+    <nav class="side-nav">
+        <hgroup>
+            <h1>Twitter</h1>
+            <p><%= press_twitter_widget %></p>
+        </hgroup>
+    </nav>
+    <% if logged_in? %>
+    <nav class="admin-nav">
+        <h1>Admin</h1>
+        <ul>
+            <li>
+                <%= link_to t.admin_page, '/admin/' %>｜
+            </li>
+            <li>
+                <%= link_to t.new_post, '/admin/posts/new' %>｜
+            </li>
+            <li>
+                <%= link_to t.logout, '/admin/logout' %>
+            </li>
+        </ul>
+    </nav>
+    <% end %>
+</div>

@@ -1,0 +1,22 @@
+<article class="entry">
+    <header class="title">
+        <h1><%= @entry.title %></h1>
+    </header>
+    <div class="body">
+        <%= @entry.body %>
+    </div>
+    <footer>
+        <p>
+            Tags <%= @entry.tags.map{|tag| %Q| <a href="#{tag.link}">#{tag.name}</a> |}.join(",") %>
+            by <span class="author vcard"><a href="#"><%= @entry.user.try(:name) %></a></span>
+            on <time><%= @entry.created_at.to_date %></time>
+            <span class="toggle-comments">Show / Hide Comments(<%= @entry.comments.size %>)</span>
+        </p>
+    </footer>
+</article><!-- END Article -->
+
+<%= press_pager @entry, :class => "pagenation" %>
+
+<section id="comment" style="display:none;">
+    <%= partial "comment", :locals => {:entry => @entry} %>
+</section>
