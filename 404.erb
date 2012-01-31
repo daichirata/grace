@@ -2,29 +2,32 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8">
-        <title>404 Page was not found.</title>
-        <meta name="description" content="<%= @site.meta_description %>">
-        <meta name="keywords" content="<%= @site.meta_keywords %>">
+        <title><%= @site.title %> - 404 Page was not found.</title>
+        <meta name="description"  content="<%= @site.meta_description %>">
+        <meta name="keywords"     content="<%= @site.meta_keywords %>">
         <link rel="shortcut icon" href="<%= @theme.path %>/favicon.ico">
-        <link rel="alternate" href="/index.atom" type="application/atom+xml">
+        <link rel="alternate"     href="/index.atom" type="application/atom+xml">
+        <link rel="stylesheet"    href="<%= @theme.path %>/assets/stylesheets/style.css" >
+        <link href='http://fonts.googleapis.com/css?family=Wellfleet' rel='stylesheet' type='text/css'>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+        <script type="text/javascript" src="<%= @theme.path %>/assets/javascripts/script.js"></script>
         <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
         <!--[if lt IE 9]>
           <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
         <%= header %>
-        <link rel="stylesheet" href="<%= @theme.path %>/style.css" >
     </head>
     <body>
-        <header id="header-top">
-            <h1 id="header-title" class="clearfix"><a href="/"><%= @site.title %></a></h1>
-            <h2 id="header-description" class="clearfix"><%= @site.description %></h2>
+        <header id="top">
+            <h1><a href="/"><%= @site.title %></a></h1>
+            <p><%= @site.description %></p>
         </header>
         <section id="not-found">
           <h1>404 page was not found.</h1>
         </section>
-        <footer id="footer" class="clearfix">
-            <p id="copy">Copyright &copy; 2011 <%= @site.title %>. All Rights Reserved.</p>
-            <p id="powerd">Powered by <a href="http://lokka.org/">Lokka</a></p>
+        <footer id="top">
+            <p><small>Copyright &copy; 2011 - 2012 <%= @site.title %>. All Rights Reserved.</small></p>
+            <p>Powered by <a href="http://lokka.org/">Lokka</a></p>
         </footer>
     </body>
 </html>

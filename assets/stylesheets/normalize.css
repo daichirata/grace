@@ -1,0 +1,415 @@
+﻿/*! normalize.css 2011-06-21T18:23 UTC ・ http://github.com/necolas/normalize.css */
+
+/*! 上記のファイルのコメント部を勝手に日本語化（大幅意訳・超訳）しました。2011-06-24 */
+
+/* =============================================================================
+   HTML5要素の表示
+   ========================================================================== */
+
+/*
+ * HTML5未サポートブラウザーでブロックレベル要素として表示する for IE6/7/8/9 & FF3
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+    display: block;
+}
+
+/*
+ * HTML5未サポートブラウザーでインライン要素として表示する for IE6/7/8/9 & FF3
+ * 制限事項: IE6では'audio[controls]'へのスタイルは適用されません。
+ */
+
+audio[controls],
+canvas,
+video {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+
+
+/* =============================================================================
+   基本設定
+   ========================================================================== */
+
+/*
+ * 1. IE6/7において単位をemでbodyにfont-sizeを設定すると正しいサイズにならない問題を修正
+ *    参考: http://clagnut.com/blog/348/#c790
+ * 2. コンテンツの高さに関わらず全てのブラウザーでページをセンタリング（スクロールバーを常時表示する）
+ * 3. AndroidやiOSにおいてtap highlight colorが親要素を含んでしまう問題を修正（tap highlight colorを消す）
+ *    参考: www.yuiblog.com/blog/2010/10/01/quick-tip-customizing-the-mobile-safari-tap-highlight-color/
+ * 4. iOSにおいて画面の向きが変わった際のテキストサイズ調整を防ぐ
+ *    参考: www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
+ */
+
+html {
+    font-size: 100%; /* 1 */
+    overflow-y: scroll; /* 2 */
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* 3 */
+    -webkit-text-size-adjust: 100%; /* 4 */
+    -ms-text-size-adjust: 100%; /* 4 */
+}
+
+/*
+ * IE6/7におけるmarginの修正
+ */
+
+body {
+    margin: 0;
+}
+
+/* 
+ * 'textarea'やその他のフォーム要素でのfont-familyの矛盾を修正
+ */
+
+body,
+button,
+input,
+select,
+textarea {
+    font-family: sans-serif;
+}
+
+
+/* =============================================================================
+   リンク関連
+   ========================================================================== */
+
+a {
+    color: #00e;
+}
+
+a:visited {
+    color: #551a8b;
+}
+
+/*
+ * Chromeにおいてoutlineの表示不具合を修正
+ */
+
+a:focus {
+    outline: thin dotted;
+}
+
+/*
+ * 全てのブラウザーにおいてフォーカス時、マウスホバー時の読みやすさを改善
+ * 参考: people.opera.com/patrickl/experiments/keyboard/test
+ */
+
+a:hover,
+a:active {
+    outline: 0;
+}
+
+
+/* =============================================================================
+   タイポグラフィ関連
+   ========================================================================== */
+
+/*
+ * IE7/8/9, S5, Chromeにおいてabbr要素がスタイリングされない問題を修正
+ */
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+/*
+ * FF3/4, S4/5, Chromeにおいてb,strong要素がboldにならない問題を修正
+*/
+
+b, 
+strong { 
+    font-weight: bold; 
+}
+
+blockquote {
+    margin: 1em 40px;
+}
+
+/*
+ * S5, Chromeにおいてdfn要素がイタリック体にならない問題を修正
+ */
+
+dfn {
+    font-style: italic;
+}
+
+/*
+ * IE6/7/8/9においてmark要素がスタイリングされない問題を修正
+ */
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+/*
+ * IE6, S5, Chromeにおけるfont-familyの問題を修正
+ * en.wikipedia.org/wiki/User:Davidgothberg/Test59
+ */
+
+pre,
+code,
+kbd,
+samp {
+    font-family: monospace, monospace;
+    _font-family: 'courier new', monospace;
+    font-size: 1em;
+}
+
+/*
+ * 全てのブラウザーにおいてpre-formatted textの読みやすさを改善
+ */
+
+pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/*
+ * 1. IE6/7においてquotesプロパティーがサポートされていない問題を修正
+ * 2. S4においてquotesプロパティーがサポートされていない問題を修正
+ */
+
+/* 1 */
+
+q {
+    quotes: none;
+}
+
+/* 2 */
+
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+small {
+    font-size: 75%;
+}
+
+/*
+ * 全てのブラウザーにおいてsubおよびsup要素がline-heightに影響する問題を防ぐ
+ * 参考: gist.github.com/413930
+ */
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+
+/* =============================================================================
+   リスト関連
+   ========================================================================== */
+
+ul,
+ol {
+    margin: 1em 0;
+    padding: 0 0 0 40px;
+}
+
+dd {
+    margin: 0 0 0 40px;
+}
+
+nav ul,
+nav ol {
+    list-style: none;
+}
+
+
+/* =============================================================================
+   埋め込みコンテンツ
+   ========================================================================== */
+
+/*
+ * 1. IE6/7/8/9において、a要素内側のborderを削除
+ * 2. IE7において画像の拡大縮小時の画質を改善
+ *    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
+ */
+
+img {
+    border: 0; /* 1 */
+    -ms-interpolation-mode: bicubic; /* 2 */
+}
+
+/*
+ * IE9においてoverflowの表示問題を修正
+ */
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+
+/* =============================================================================
+   Figure要素
+   ========================================================================== */
+
+/*
+ * IE6/7/8/9, S5, O11におけるmarginの問題を修正
+ */
+
+figure {
+    margin: 0;
+}
+
+
+/* =============================================================================
+   フォーム関連
+   ========================================================================== */
+
+/*
+ * IE6/7におけるmarginの問題を修正
+ */
+
+form {
+    margin: 0;
+}
+
+/*
+ * 矛盾のないmarginおよびpaddingの設定
+ */
+
+fieldset {
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+/*
+ * 1. IE6/7/8/9において色が継承されない問題を修正
+ * 2. IE6/7において揃いがおかしい問題を修正
+ */
+
+legend {
+    border: 0; /* 1 */
+    *margin-left: -7px; /* 2 */
+}
+
+/*
+ * 1. 全てのブラウザーにおいてfont-sizeが継承されない問題を修正
+ * 2. IE6/7, F3/4, S5, Chromeにおけるmarginの差異を修正
+ * 3. 全てのブラウザーにおいて外観と一貫性を改善
+ */
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%; /* 1 */
+    margin: 0; /* 2 */
+    vertical-align: baseline; /* 3 */
+    *vertical-align: middle; /* 3 */
+}
+
+/*
+ * 1. FF3/4のUA stylesheetにおいてline-heightが!importantになっている点について修正
+ * 2. IE6/7においてインナースペースの表示問題を修正
+ */
+
+button,
+input {
+    line-height: normal; /* 1 */
+    *overflow: visible;  /* 2 */
+}
+
+/*
+ * 1. image-typeが'input'とその他についてユーザビリティと一貫性を改善
+ * 2. iOSにおいてクリック可能な'input'にスタイルが適用できない問題を修正
+ */
+
+button,
+input[type="button"], 
+input[type="reset"], 
+input[type="submit"] {
+    cursor: pointer; /* 1 */
+    -webkit-appearance: button; /* 2 */
+}
+
+/*
+ * IE8/9においてbox-sizingプロパティがcontent-boxになっている点を修正
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box;
+}
+
+/*
+ * 1. S5, Chromeにおいてappearanceプロパティがsearchfieldになっている点を修正
+ * 2. S5, Chromeにおいてbox-sizingプロパティがborder-box担っている点を修正 (将来的なことを踏まえて-mozも含める)
+ */
+
+input[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; /* 2 */
+    box-sizing: content-box;
+}
+
+/*
+ * S5, Chrome on OSXにおけるpaddingの表示問題を修正 
+ */
+
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/*
+ * FF3/4におけるpadding及びborderの表示問題を修正
+ * 参考: www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/*
+ * 1. IE6/7/8/9におけるデフォルト表示のスクロールバーを削除
+ * 2. 全てのブラウザーにおいて読みやすさと揃えを改善
+ */
+
+textarea {
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
+}
+
+
+/* =============================================================================
+   テーブル関連
+   ========================================================================== */
+
+/* 
+ * テーブルのセル間のほとんどのスペースを削除
+ */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}

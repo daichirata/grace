@@ -1,46 +1,29 @@
 @charset "UTF-8";
 /*
-    Name: Simple
+    Name: Grace
     Date: Jan 2012
     Version: 1.0
     Author: Daichi Hirata
     Author URI: http://a-newcomer.com
 */
-/* CSS Document */
-/* Reset */
-html, body, div, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, pre, form, p, label, select, option, blockquote, fieldset, input {
-  margin: 0;
-  padding: 0; }
+@font-face {
+  font-family: 'Wellfleet';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Wellfleet"), local("Wellfleet-Regular"), url("http://themes.googleusercontent.com/static/fonts/wellfleet/v1/qu15OBOh_Q0T8ooRUaKSDbO3LdcAZYWl9Si6vvxL-qU.woff") format("woff"); }
 
-ul, ol {
-  list-style: none; }
-
-img {
-  border: none; }
-
-:focus {
-  outline: 0; }
-
-/* END Reset */
-/* HTML5 */
-article, aside, details, footer, header, hgroup, menu, nav, section, summary {
-  display: block; }
-
-/* END HTML5 */
-/* Global Style */
 body {
   margin-top: 30px;
-  font-size: 13px;
+  font-size: 14px;
   font-family: "メイリオ",Meiryo,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro", Osaka,sans-serif;
   color: black;
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+  /* background: #f7f7f7 url(http://webdesigneraid.com/html5/site-01/images/bg.gif) repeat-y center; */
   background: #f7f7f7 url(../images/bg-body.gif) repeat fixed; }
 
-.clearfix:before, .clearfix:after {
-  content: "";
-  display: table; }
-
 .clearfix:after {
+  content: '';
+  display: block;
   clear: both; }
 
 .clearfix {
@@ -49,6 +32,9 @@ body {
 a {
   outline: none;
   text-decoration: none;
+  color: #A3443E; }
+
+a:visited {
   color: #A3443E; }
 
 /* Header */
@@ -68,7 +54,7 @@ header#top {
     font-size: 18px;
     text-shadow: 0 0 3px #555;
     letter-spacing: 2px;
-    color: #333333; }
+    color: #333; }
 
 /* END Header */
 /* Container */
