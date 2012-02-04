@@ -2,32 +2,28 @@
     <article class="entry">
         <header class="title">
             <h1><a href="<%= post.link %>"><%= post.title %></a></h1>
-        </header>
-        <div class="short-body">
-          <%= post.body %>
-        </div>
-        <footer class="footer">
-            <p>
+            <p class="meta">
                 Tags <%= post.tags.map{|tag| %Q|<a href="#{tag.link}">#{tag.name}</a>|}.join(", ") %>
                 by <span class="author vcard"><a href="#"><%= post.user.name %></a></span>
                 on <time><%= post.created_at.to_date %></time>
-                <span class="toggle-comments"><%= link_to "Comments(#{post.comments.size})", "#{post.link}#comment" %></span>
             </p>
-        </footer>
+        </header>
+        <div class="body">
+          <%= post.body %>
+        </div>
     </article><!-- END Article -->
-    <%= "<hr />" unless @posts.last == post %>
 <% end %>
 
 <div class="pagenation">
     <ul>
         <li class="next">
           <% if @posts.pager.previous_page %>
-            <a class="next-link" href="?page=<%= @posts.pager.previous_page %>"><%= t.newer %></a>
+            <a class="next-link" href="?page=<%= @posts.pager.previous_page %>"><%= I18n.t('newer') %></a>
           <% end %>
         </li>
         <li class="previous">
           <% if @posts.pager.next_page %>
-            <a class="previous-link" href="?page=<%= @posts.pager.next_page %>"><%= t.older %></a>
+            <a class="previous-link" href="?page=<%= @posts.pager.next_page %>"><%= I18n.t('older') %></a>
           <% end %>
         </li>
     </ul>
