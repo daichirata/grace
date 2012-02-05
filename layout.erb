@@ -22,7 +22,7 @@
     <body>
         <!-- Header
         ================================================== -->
-        <header id="top">
+        <header id="header-top">
             <h1><a href="/"><%= @site.title %></a></h1>
             <p><%= @site.description %></p>
         </header>
@@ -34,9 +34,58 @@
         <!-- END Container -->
         <!-- Footer
         ================================================== -->
-        <footer id="top">
-            <p><small>Copyright &copy; 2011 - 2012 <%= @site.title %>. All Rights Reserved.</small></p>
-            <p>Powered by <a href="http://lokka.org/">Lokka</a></p>
+        <footer id="footer-top">
+          <div class="footer-wrap">
+            <div class="container clearfix">
+              <nav>
+                <h1>Archives</h1>
+                <ul>
+                  <% months.each do |m| %>
+                    <li><%= link_to "#{m.year}年 #{m.month}月 (#{m.count})", "/#{m.year}/#{m.month}/" %></li>
+                  <% end %>
+                </ul>
+              </nav>
+              <nav>
+                <h1>Category</h1>
+                <ul>
+                  <% Category.all.each do |c| %>
+                    <li><%= link_to c.title, c.link %></li>
+                  <% end %>
+                </ul>
+                <p>&emsp;</p>
+                <h1>Tags</h1>
+                <ul class="tagCloud clearfix">
+                  <% grace_tag_cloud do |tag, klass|%>
+                    <%= %Q(<li class="#{klass}">#{link_to(tag.name, tag.link)}</li>) %>
+                  <% end %>
+                </ul>
+              </nav>
+              <nav>
+                <hgroup>
+                  <h1>Twitter Feed</h1>
+                  <%= grace_twitter_widget %>
+                </hgroup>
+              </nav>
+              <nav>
+              <% if about = Snippet("about") %>
+                <h1>About me</h1>
+                <%= about.body %>
+                <ul class="social-icon clearfix">
+                  <% [:rss,:twitter,:facebook,:github,:aboutme].each do |service| %>
+                    <li>
+                      <%= grace_social_tag service %>
+                      <span><%= service.capitalize %></span>
+                    </li>
+                  <% end %>
+                </ul>
+                <p>&emsp;</p>
+              <% end %>
+                <h1>Credits</h1>
+                <p><small>Copyright &copy; 2011 - 2012 <%= @site.title %>. All Rights Reserved.</small></p>
+                <p>Powered by <a href="http://lokka.org/">Lokka</a></p>
+              </nav>
+            </div>
+          </div>
         </footer>
         <!-- END Footer -->
         <%= footer %>

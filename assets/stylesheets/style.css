@@ -13,7 +13,7 @@ Date: Jan 2012
   src: local("ChunkFive Regular"), local("ChunkFive"), url("fonts/Chunkfive.woff") format("woff"), url("../fonts/Chunkfive.otf") format("opentype"); }
 
 body {
-  margin-top: 30px;
+  border-top: 3px solid #333;
   font-family: "メイリオ",Meiryo,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro", Osaka,sans-serif;
   color: #333;
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
@@ -57,16 +57,47 @@ blockquote {
   padding: 30px 30px;
   background: url(../images/quote.png) no-repeat left top; }
 
+.pagenation {
+  height: 40px; }
+  .pagenation a {
+    text-decoration: none; }
+  .pagenation li {
+    float: left;
+    list-style: none; }
+  .pagenation .next {
+    text-align: left;
+    width: 50%;
+    height: 40px;
+    position: relative;
+    margin-left: 0; }
+  .pagenation .next-link:before {
+    content: "\00ab";
+    color: #aaa;
+    margin-right: 5px; }
+  .pagenation .previous {
+    text-align: right;
+    width: 50%;
+    height: 40px;
+    position: relative;
+    margin-right: 0; }
+  .pagenation .previous-link:after {
+    content: "\00bb";
+    color: #aaa;
+    margin-left: 5px; }
+
+.mbt120 {
+  margin-bottom: 120px; }
+
 /* Header */
-header#top {
+#header-top {
   text-align: left;
   margin: 0 0 1px;
   text-align: center;
   text-transform: uppercase; }
-  header#top h1 {
+  #header-top h1 {
     font-family: 'ChunkFive Regular', Arial, Helvetica, sans-serif;
     margin-bottom: 0; }
-    header#top h1 a {
+    #header-top h1 a {
       color: #292929;
       text-decoration: none;
       font-size: 75px;
@@ -79,7 +110,7 @@ header#top {
       -moz-transform: translateZ(0);
       -o-transform: translateZ(0);
       transform: translateZ(0); }
-  header#top p {
+  #header-top p {
     margin-top: 0;
     color: #666;
     font-size: 18px;
@@ -89,79 +120,102 @@ header#top {
 /* Container */
 #container {
   width: 960px;
-  padding: 20px 30px 20px 30px;
   margin: 0 auto; }
-  #container p {
-    font-size: 15px;
-    line-height: 2em;
-    margin: 15px 0; }
-  #container .entry {
-    padding: 20px 90px 20px; }
-    #container .entry .title h1 {
+  #container article.entry {
+    padding: 20px 90px 40px;
+    position: relative; }
+    #container article.entry .title h1 {
       margin-bottom: 0;
       font-size: 200%;
       text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); }
-      #container .entry .title h1 a {
+      #container article.entry .title h1 a {
         color: #333;
         text-decoration: none;
         text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); }
-      #container .entry .title h1 a:hover {
+      #container article.entry .title h1 a:hover {
         color: #666; }
-    #container .entry .meta {
+    #container article.entry .meta {
       margin: 0 0 30px;
       display: block;
       text-align: right; }
-    #container .entry .body h1, #container .entry .body h2, #container .entry .body h3, #container .entry .body h4, #container .entry .body h5, #container .entry .body h6 {
+    #container article.entry .meta-date {
+      background: white;
+      padding: 7px;
+      position: absolute;
+      top: 50px;
+      left: -20px;
+      width: 72px;
+      height: 60px;
+      -moz-box-shadow: 2px 2px 4px #999999, -2px -2px 4px #999999;
+      -webkit-box-shadow: 2px 2px 4px #999999, -2px -2px 4px #999999;
+      box-shadow: 2px 2px 4px #999999, -2px -2px 4px #999999;
+      border-radius: 10px;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px; }
+      #container article.entry .meta-date p {
+        background: #333;
+        color: white;
+        display: block;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-weight: bold;
+        margin-top: 0;
+        text-align: center;
+        width: 72px;
+        height: 60px;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px; }
+      #container article.entry .meta-date span {
+        font-size: 1.5em; }
+    #container article.entry .body p {
+      font-size: 15px;
+      line-height: 2em;
+      margin: 15px 0; }
+    #container article.entry .body h1, #container article.entry .body h2, #container article.entry .body h3, #container article.entry .body h4, #container article.entry .body h5, #container article.entry .body h6 {
       font-weight: normal; }
-    #container .entry .body h1, #container .entry .body h2 {
+    #container article.entry .body h1, #container article.entry .body h2 {
       font-size: 190%;
       padding: 7px 0 7px 22px;
       margin: 55px 0 25px 0;
       border-left: 3px solid #A3443E; }
-    #container .entry .body h3, #container .entry .body h4, #container .entry .body h5, #container .entry .body h6 {
+    #container article.entry .body h3, #container article.entry .body h4, #container article.entry .body h5, #container article.entry .body h6 {
       font-size: 160%;
       padding: 5px 0 5px 10px;
       margin: 35px 0 15px 0;
       border-bottom: 3px  solid #A3443E; }
-    #container .entry .body .read-more {
+    #container article.entry .body .read-more {
       font-size: 110%;
+      text-align: right;
+      color: white;
+      background: #333;
+      width: 90px;
+      float: right;
+      margin-top: 20px;
       margin-bottom: 20px;
       display: block;
-      text-align: right; }
-    #container .entry .thumbnail {
+      padding: 0.5em 1.5em;
+      border: 1px solid white;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+      border-image: initial; }
+    #container article.entry .thumbnail {
       float: left;
-      padding-right: 30px; }
-      #container .entry .thumbnail img {
+      padding-right: 2em; }
+      #container article.entry .thumbnail img {
         -webkit-box-shadow: rgba(0, 0, 0, 0.797) 0px 0px 8px;
         box-shadow: rgba(0, 0, 0, 0.797) 0px 0px 8px; }
-    #container .entry hr {
+    #container article.entry hr {
       border-top: 1px #CCC;
       height: 20px;
       color: #FFFFFF; }
-    #container .entry #comment #comment-list {
-      margin: 20px 0 20px; }
-      #container .entry #comment #comment-list p {
-        margin: 0; }
-      #container .entry #comment #comment-list .comment-header {
-        margin: 20px 0 10px; }
-        #container .entry #comment #comment-list .comment-header .name {
-          font-size: 20px; }
-        #container .entry #comment #comment-list .comment-header .date {
-          font-size: 12px; }
-    #container .entry #comment .comment-title {
-      font-size: 20px;
-      line-height: 1.4;
-      padding: 7px 0 7px 22px;
-      margin-bottom: 20px;
-      border-left: 3px solid #BB3B68; }
-    #container .entry #comment .comment-body {
-      padding: 10px 30px; }
-    #container .entry #comment .comment-form p {
-      margin-bottom: 25px; }
-    #container .entry #comment .comment-form h4 {
-      padding: 7px 0 7px 22px;
-      border-left: 3px solid #BB3B68;
-      margin: 0 0 25px 0; }
+
+#recent-entries, #related-entries {
+  margin-bottom: 80px; }
+  #recent-entries h1, #related-entries h1 {
+    font-size: 2em;
+    font-family: 'ChunkFive Regular', Arial, Helvetica, sans-serif; }
 
 #not-found {
   width: 960px;
@@ -174,15 +228,69 @@ header#top {
 
 /* END Container */
 /* Footer  */
-footer#top {
-  width: 990px;
-  text-align: center;
-  margin: 0 auto;
-  padding: 30px 0; }
-  footer#top p {
-    text-shadow: 1px 1px 0px white; }
+#footer-top {
+  background: url(../images/footer-bg.png);
+  color: #CCC;
+  font-size: 12px;
+  margin-top: 50px;
+  border-top: 1px solid #0F0F0F;
+  position: relative; }
+  #footer-top .footer-wrap {
+    width: 100%;
+    clear: both;
+    padding: 20px 0 10px;
+    border-top: 1px solid #666; }
+    #footer-top .footer-wrap .container {
+      width: 960px;
+      margin: 0 auto; }
+      #footer-top .footer-wrap .container nav {
+        color: #CCC;
+        width: 200px;
+        float: left;
+        margin-right: 40px; }
+        #footer-top .footer-wrap .container nav h1 {
+          color: #EDECEC;
+          border-bottom: 1px solid #676767;
+          font-family: 'ChunkFive Regular', Arial, Helvetica, sans-serif;
+          text-transform: uppercase;
+          line-height: 20px;
+          margin: 0 0 15px;
+          padding: 0 0 2px; }
+        #footer-top .footer-wrap .container nav ul {
+          margin: 0;
+          padding: 0; }
+        #footer-top .footer-wrap .container nav a {
+          color: #CCC; }
+        #footer-top .footer-wrap .container nav a:hover {
+          color: #CCC;
+          text-shadow: none; }
+        #footer-top .footer-wrap .container nav .twtr-hd {
+          display: none; }
+        #footer-top .footer-wrap .container nav .twtr-widget .twtr-tweet {
+          padding-bottom: 10px;
+          margin-bottom: 10px;
+          border-bottom: 1px solid #676767; }
+        #footer-top .footer-wrap .container nav .social-icon {
+          margin-top: 10px; }
+          #footer-top .footer-wrap .container nav .social-icon li {
+            float: left;
+            margin-right: 5px; }
+            #footer-top .footer-wrap .container nav .social-icon li span {
+              color: #CCC;
+              text-align: center;
+              top: 190px;
+              height: 15px;
+              padding: 5px 10px 10px;
+              position: absolute;
+              z-index: 2;
+              display: none;
+              background: rgba(204, 204, 204, 0.4);
+              border-radius: 5px 5px 10px 10px; }
 
 /* END Footer */
+/*--------------------------------------
+	jQuery.ui.top
+---------------------------------------*/
 #toTop {
   display: none;
   text-decoration: none;
@@ -209,3 +317,57 @@ footer#top {
 
 #toTop:active, #toTop:focus {
   outline: none; }
+
+/*--------------------------------------
+	Tag Cloud
+---------------------------------------*/
+ul.tagCloud {
+  margin: 0;
+  padding: 0.5em 10px;
+  line-height: 1;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px; }
+
+ul.tagCloud li {
+  margin: 0;
+  padding: 0;
+  padding-right: 5px;
+  float: left;
+  display: inline;
+  font-size: 100%;
+  /* ここで相対的に文字サイズを変更 */ }
+
+ul.tagCloud li a {
+  text-decoration: none; }
+
+/* タグレベル1～6 */
+ul.tagCloud li.level1 a {
+  font-size: 167%;
+  font-weight: bold;
+  color: #cfcfcf !important; }
+
+ul.tagCloud li.level2 a {
+  font-size: 136%;
+  font-weight: bold;
+  color: #b3b3b3 !important; }
+
+ul.tagCloud li.level3 a {
+  font-size: 122%;
+  font-weight: bold;
+  color: #979797 !important; }
+
+ul.tagCloud li.level4 a {
+  font-size: 114%;
+  color: #7a7a7a !important; }
+
+ul.tagCloud li.level5 a {
+  font-size: 92%;
+  color: #6e6e6e !important; }
+
+ul.tagCloud li.level6 a {
+  font-size: 77%;
+  color: #5e5e5e !important; }
+
+/* オンマウス */
+ul.tagCloud li a:hover {
+  color: #CCC !important; }

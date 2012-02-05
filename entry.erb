@@ -1,22 +1,41 @@
 <article class="entry">
     <header class="title">
+        <div class="meta-date">
+            <p><%= @entry.created_at.year %><br>
+            <span><%= @entry.created_at.month %>/<%= @entry.created_at.day %></span></p>
+        </div>
         <h1><%= @entry.title %></h1>
         <p class="meta">
             Tags <%= @entry.tags.map{|tag| %Q| <a href="#{tag.link}">#{tag.name}</a> |}.join(",") %>
             by <span class="author vcard"><a href="#"><%= @entry.user.try(:name) %></a></span>
             on <time><%= @entry.created_at.to_date %></time>
+            <% if logged_in? %>
+              <a href="<%= @entry.edit_link %>"><%= t('edit') %></a>
+            <% end %>
         </p>
     </header>
     <div class="body">
         <%= @entry.body %>
     </div>
-    <footer>
-
-    </footer>
 </article><!-- END Article -->
 
-<%= press_pager @entry, :class => "pagenation" %>
+<nav id="related-entries">
+  <h1>Related Entries</h1>
+  <ul>
+    <% (it = @entry.category) && it.entries.each do |entry| %>
+      <li><%= link_to entry.title, entry.link %></li>
+    <% end %>
+  </ul>
+</nav>
 
-<section id="comment" style="display:none;">
-    <%= partial "comment", :locals => {:entry => @entry} %>
-</section>
+<nav id="recent-entries">
+  <h1>Recent Entries</h1>
+  <ul>
+    <% Post.recent(5).each do |post| %>
+      <li><%= link_to post.title, post.link %></li>
+    <% end %>
+  </ul>
+</nav>
+
+<%= grace_pager @entry, :class => "pagenation" %>
+

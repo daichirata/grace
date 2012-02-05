@@ -1,11 +1,18 @@
 <% @posts.each do |post| %>
-    <article class="entry">
+    <article class="entry mbt120">
         <header class="title">
+            <div class="meta-date">
+              <p><%= post.created_at.year %><br>
+                <span><%= post.created_at.month %>/<%= post.created_at.day %></span></p>
+            </div>
             <h1><a href="<%= post.link %>"><%= post.title %></a></h1>
             <p class="meta">
                 Tags <%= post.tags.map{|tag| %Q|<a href="#{tag.link}">#{tag.name}</a>|}.join(", ") %>
                 by <span class="author vcard"><a href="#"><%= post.user.name %></a></span>
                 on <time><%= post.created_at.to_date %></time>
+                <% if logged_in? %>
+                    <a href="<%= post.edit_link %>"><%= t('edit') %></a>
+                <% end %>
             </p>
         </header>
         <div class="body">

@@ -15,7 +15,7 @@ Date: Jan 2012
 }
 
 body {
-    margin-top: 30px;
+    border-top: 3px solid #333;
     font-family: "メイリオ",Meiryo,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro", Osaka,sans-serif;
     color: #333;
     text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
@@ -58,9 +58,46 @@ blockquote {
     background: url(../images/quote.png) no-repeat left top;
 }
 
+.pagenation {
+    height: 40px;
+    a { text-decoration: none; }
+    li {
+        float: left;
+        list-style: none;
+    }
+    .next {
+        text-align: left;
+        width: 50%;
+        height: 40px;
+        position: relative;
+        margin-left: 0;
+    }
+    .next-link:before{
+        content:"\00ab";
+        color: #aaa;
+        margin-right: 5px;
+    }
+    .previous {
+        text-align: right;
+        width: 50%;
+        height: 40px;
+        position: relative;
+        margin-right: 0;
+    }
+    .previous-link:after{
+        content:"\00bb";
+        color: #aaa;
+        margin-left: 5px;
+    }
+}
+
+.mbt120 {
+    margin-bottom: 120px;
+}
+
 /* Header */
 
-header#top {
+#header-top {
     text-align: left;
     margin: 0 0 1px;
     text-align: center;
@@ -95,18 +132,12 @@ header#top {
 
 
 /* Container */
-
 #container {
     width: 960px;
-    padding: 20px 30px 20px 30px;
     margin: 0 auto;
-    p {
-        font-size: 15px;
-        line-height: 2em;
-        margin: 15px 0;
-    }
-    .entry {
-        padding: 20px 90px 20px;
+    article.entry {
+        padding: 20px 90px 40px;
+        position: relative;
         .title {
             h1 {
                 margin-bottom: 0;
@@ -125,7 +156,42 @@ header#top {
             display: block;
             text-align: right;
         }
+        .meta-date {
+            background: white;
+            padding: 7px;
+            position: absolute;
+            top: 50px;
+            left: -20px;
+            width: 72px;
+            height: 60px;
+            -moz-box-shadow: 2px 2px 4px #999, -2px -2px 4px #999;
+            -webkit-box-shadow: 2px 2px 4px #999, -2px -2px 4px #999;
+            box-shadow: 2px 2px 4px #999, -2px -2px 4px #999;
+            border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            p {
+                background: #333;
+                color: white;
+                display: block;
+                font-family: Georgia, "Times New Roman", Times, serif;
+                font-weight: bold;
+                margin-top: 0;
+                text-align: center;
+                width: 72px;
+                height: 60px;
+                border-radius: 5px;
+                -moz-border-radius: 5px;
+                -webkit-border-radius: 5px;
+            }
+            span { font-size: 1.5em; }
+        }
         .body {
+            p {
+                font-size: 15px;
+                line-height: 2em;
+                margin: 15px 0;
+            }
             h1,h2,h3,h4,h5,h6 {
                 font-weight: normal;
             }
@@ -143,14 +209,26 @@ header#top {
             }
             .read-more {
                 font-size: 110%;
+                text-align: right;
+                color: white;
+                background: #333;
+                width: 90px;
+                float: right;
+                margin-top: 20px;
                 margin-bottom: 20px;
                 display: block;
-                text-align: right;
+                padding: 0.5em 1.5em;
+                border: 1px solid white;
+                border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+                border-image: initial;
             }
         }
         .thumbnail {
             float: left;
-            padding-right: 30px;
+            padding-right: 2em;
             img {
                 -webkit-box-shadow: rgba(0, 0, 0, 0.796875) 0px 0px 8px;
                 box-shadow: rgba(0, 0, 0, 0.796875) 0px 0px 8px;
@@ -161,37 +239,14 @@ header#top {
             height: 20px;
             color:#FFFFFF;
         }
-        #comment {
-            #comment-list{
-                margin: 20px 0 20px;
-                p {margin: 0;}
-                .comment-header{
-                    margin: 20px 0 10px;
-                    .name{ font-size: 20px;}
-                    .date{ font-size: 12px;}
-                }
-            }
-            .comment-title{
-                font-size: 20px;
-                line-height: 1.4;
-                padding: 7px 0 7px 22px;
-                margin-bottom: 20px;
-                border-left: 3px solid #BB3B68;
-            }
-            .comment-body {
-                padding: 10px 30px;
-            }
-            .comment-form {
-                p {
-                    margin-bottom: 25px;
-                }
-                h4 {
-                    padding: 7px 0 7px 22px;
-                    border-left: 3px solid #BB3B68;
-                    margin: 0 0 25px 0;
-                }
-            }
-        }
+    }
+}
+
+#recent-entries, #related-entries {
+    margin-bottom: 80px;
+    h1 {
+        font-size: 2em;
+        font-family: 'ChunkFive Regular', Arial, Helvetica, sans-serif;
     }
 }
 
@@ -208,16 +263,82 @@ header#top {
 
 /* Footer  */
 
-footer#top {
-    width: 990px;
-    text-align: center;
-    margin: 0 auto;
-    padding: 30px 0;
-    p { text-shadow: 1px 1px 0px white; }
-}
+#footer-top {
+    background: url(../images/footer-bg.png);
+    color: #CCC;
+    font-size: 12px;
+    margin-top: 50px;
+    border-top: 1px solid #0F0F0F;
+    position: relative;
+    .footer-wrap {
+        width: 100%;
+        clear: both;
+        padding: 20px 0 10px;
+        border-top: 1px solid #666;
+        .container {
+            width: 960px;
+            margin: 0 auto;
+            nav {
+                color: #CCC;
+                width: 200px;
+                float: left;
+                margin-right: 40px;
+                h1 {
+                    color: #EDECEC;
+                    border-bottom: 1px solid #676767;
+                    font-family: 'ChunkFive Regular', Arial, Helvetica, sans-serif;
+                    text-transform: uppercase;
+                    line-height: 20px;
+                    margin: 0 0 15px;
+                    padding: 0 0 2px;
+                }
+                ul {
+                    margin: 0;
+                    padding: 0;
+                }
+                a { color: #CCC; }
+                a:hover {
+                    color: #CCC;
+                    text-shadow: none;
+                }
+                .twtr-hd {
+                    display: none;
+                }
+                .twtr-widget .twtr-tweet {
+                    padding-bottom: 10px;
+                    margin-bottom: 10px;
+                    border-bottom: 1px solid #676767;
+                }
+                .social-icon{
+                    margin-top: 10px;
+                    li {
+                        float:left;
+                        margin-right: 5px;
+                        span {
+                            color: #CCC;
+                            text-align: center;
+                            top: 190px;
+                            height: 15px;
+                            padding: 5px 10px 10px;
+                            position: absolute;
+                            z-index: 2;
+                            display: none;
+                            background: rgba(204, 204, 204, .4);
+                            border-radius: 5px 5px 10px 10px;
+                        }
+                    }
+                }
 
+            }
+        }
+
+    }
+}
 /* END Footer */
 
+/*--------------------------------------
+	jQuery.ui.top
+---------------------------------------*/
 
 #toTop {
 	display:none;
@@ -247,4 +368,69 @@ footer#top {
 
 #toTop:active, #toTop:focus {
 	outline:none;
+}
+
+/*--------------------------------------
+	Tag Cloud
+---------------------------------------*/
+
+ul.tagCloud {
+	margin: 0;
+	padding: 0.5em 10px;
+	line-height: 1;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+}
+
+ul.tagCloud li {
+	margin: 0;
+	padding: 0;
+    padding-right: 5px;
+    float: left;
+	display: inline;
+	font-size: 100%; /* ここで相対的に文字サイズを変更 */
+}
+
+ul.tagCloud li a {
+	text-decoration: none;
+}
+
+/* タグレベル1～6 */
+
+ul.tagCloud li.level1 a {
+	font-size: 167%;
+	font-weight: bold;
+	color: #cfcfcf !important;
+}
+
+ul.tagCloud li.level2 a {
+	font-size: 136%;
+	font-weight: bold;
+	color: #b3b3b3 !important;
+}
+
+ul.tagCloud li.level3 a {
+	font-size: 122%;
+	font-weight: bold;
+	color: #979797 !important;
+}
+
+ul.tagCloud li.level4 a {
+	font-size: 114%;
+	color: #7a7a7a !important;
+}
+
+ul.tagCloud li.level5 a {
+	font-size: 92%;
+	color: #6e6e6e !important;
+}
+
+ul.tagCloud li.level6 a {
+	font-size: 77%;
+	color: #5e5e5e !important;
+}
+
+/* オンマウス */
+ul.tagCloud li a:hover {
+	color: #CCC !important;
 }
