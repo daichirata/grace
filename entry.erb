@@ -6,7 +6,7 @@
         </div>
         <h1><%= @entry.title %></h1>
         <p class="meta">
-          <span>Category: <a href="<%= @entry.category.link %>"><%= @entry.category.title %></a></span>
+          <span>Category: <a href="<%= @entry.category.try(:link) %>"><%= @entry.category.try(:title) %></a></span>
           <span>Tags: <%= @entry.tags.map{|tag| %Q|<a href="#{tag.link}">#{tag.name}</a>|}.join(", ") %></span>
           by <span class="author vcard"><a href="#"><%= @entry.user.name %></a></span>
           on <time><%= @entry.created_at.to_date %></time>
