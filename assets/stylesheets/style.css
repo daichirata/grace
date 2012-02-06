@@ -16,7 +16,7 @@ body {
   border-top: 3px solid #333;
   font-family: "メイリオ",Meiryo,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro", Osaka,sans-serif;
   color: #333;
-  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+  /* text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2); */
   background: #eeeeee url(../images/bg.gif) repeat fixed; }
 
 .clearfix:after {
