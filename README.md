@@ -8,6 +8,8 @@ Is required [lokka-tag_cloud](https://github.com/daic-h/lokka-tag_cloud).
 
     $ cd public/theme
     $ git clone git://github.com/daic-h/grace.git
+
+    $ cd public/plugin
     $ git clone git://github.com/daic-h/lokka-tag_cloud.git
 
 ## Sample
