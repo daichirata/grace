@@ -31,13 +31,16 @@
         <div id="container" class="clearfix">
             <%= yield %>
         </div>
-        <!-- END Container -->
         <!-- Footer
         ================================================== -->
         <footer id="footer-top">
             <%= partial "footer", :theme => "grace" %>
         </footer>
-        <!-- END Footer -->
+        <!-- Copyright
+        ================================================== -->
+        <div id="copyright">
+            <p><small>Copyright &copy; 2011 - 2012 <%= @site.title %>. All Rights Reserved.</small></p>
+        </div>
         <%= footer %>
         <a href="#" id="toTop"><span id="toTopHover"></span>To Top</a>
     </body>

@@ -73,23 +73,6 @@ module Lokka
       HTML
       html.html_safe
     end
-
-    def grace_tag_cloud(&block)
-      tags = Tag.all.sort_by(&:name)
-      level = %w(level6 level5 level4 level3 level2 level1)
-
-      max_count = 0
-      tags.each {|tag| max_count = tag.taggings.count if tag.taggings.count > max_count }
-
-      tags.each do |tag|
-        if max_count > 1
-          index = ((tag.taggings.count.to_f / max_count.to_f) * (level.size - 1)).round
-        else
-          index = 0
-        end
-        block.call(tag, level[index])
-      end
-    end
   end
 end
 

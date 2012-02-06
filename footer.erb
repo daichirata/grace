@@ -18,8 +18,8 @@
       <p>&emsp;</p>
       <h1>Tags</h1>
       <ul class="tagCloud clearfix">
-        <% grace_tag_cloud do |tag, klass|%>
-          <%= %Q(<li class="#{klass}">#{link_to(tag.name, tag.link)}</li>) %>
+        <% tag_cloud :classes => %w(level6 level5 level4 level3 level2 level1), :sort => true do |tag, klass|%>
+            <%= %Q(<li class="#{klass}">#{link_to(tag.name, tag.link)}</li>) %>
         <% end %>
       </ul>
     </nav>
@@ -44,8 +44,10 @@
         <p>&emsp;</p>
       <% end %>
       <h1>Credits</h1>
-      <p><small>Copyright &copy; 2011 - 2012 <%= @site.title %>. All Rights Reserved.</small></p>
       <p>Powered by <a href="http://lokka.org/">Lokka</a></p>
+      <p>Use <a href="http://www.heroku.com/">Heroku</a> for hosting.</p>
     </nav>
   </div>
 </div>
+
+

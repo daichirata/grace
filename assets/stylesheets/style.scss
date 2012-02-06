@@ -33,9 +33,9 @@ body {
 a, a:visited {
     color: #A3443E;
     text-decoration: underline;
-    -webkit-transition: all 100ms linear;
-    -moz-transition: all 100ms linear;
-    transition: all 100ms linear;
+    -webkit-transition: all 200ms linear;
+    -moz-transition: all 200ms linear;
+    transition: all 200ms linear;
 }
 
 a:hover { color: #A3443E; text-shadow: 0 1px 0 #fff; }
@@ -114,10 +114,9 @@ blockquote {
             -moz-transition: all 200ms linear;
             -o-transition: all 200ms linear;
             transition: all 200ms linear;
-            -webkit-transform: translateZ(0);
-            -moz-transform: translateZ(0);
-            -o-transform: translateZ(0);
-            transform: translateZ(0);
+        }
+        a:hover{
+            font-size: 3em;
         }
     }
     p {
@@ -252,15 +251,13 @@ blockquote {
 
 #not-found {
     width: 960px;
-    height: 200px;
-    padding: 20px 30px 50px 30px;
     margin: 0 auto;
-    position: relative;
+    padding: 100px 0;
     h1 {
         color: #333;
         font-size: 2em;
-        text-align: center;
         font-family: 'ChunkFive Regular', Arial, Helvetica, sans-serif;
+        text-align: center;
         text-shadow: 0 1px 0 #fff;
     }
 }
@@ -303,10 +300,15 @@ blockquote {
                     margin: 0;
                     padding: 0;
                 }
-                a { color: #CCC; }
+                a {
+                    color: #CCC;
+                }
                 a:hover {
                     color: #CCC;
                     text-shadow: none;
+                }
+                p {
+                    margin: 5px 0;
                 }
                 .twtr-hd {
                     display: none;
@@ -342,6 +344,22 @@ blockquote {
     }
 }
 /* END Footer */
+
+/* Copyright */
+
+#copyright {
+    color: #666;
+    font-size: 11px;
+    width: 100%;
+    background: #191919;
+    border-top: 1px solid #393738;
+    overflow: hidden;
+    text-align: center;
+    p { margin: 1em 0; }
+}
+
+
+/* END Copyright*/
 
 /*--------------------------------------
 	jQuery.ui.top
