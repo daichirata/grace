@@ -7,7 +7,7 @@
             </div>
             <h1><a href="<%= post.link %>"><%= post.title %></a></h1>
             <p class="meta">
-                <span>Category: <a href="<%= post.category.link %>"><%= post.category.title %></a></span>
+                <span>Category: <a href="<%= post.category.try(:link) %>"><%= post.category.try(:title) %></a></span>
                 <span>Tags: <%= post.tags.map{|tag| %Q|<a href="#{tag.link}">#{tag.name}</a>|}.join(", ") %></span>
                 by <span class="author vcard"><a href="#"><%= post.user.name %></a></span>
                 on <time><%= post.created_at.to_date %></time>
