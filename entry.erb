@@ -22,7 +22,7 @@
 <nav id="related-entries">
   <h1>Related Entries</h1>
   <ul>
-    <% (it = @entry.category) && it.entries.each do |entry| %>
+    <% (it = @entry.category) && it.entries[0..4].each do |entry| %>
       <li><%= link_to entry.title, entry.link %></li>
     <% end %>
   </ul>
