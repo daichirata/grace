@@ -252,10 +252,17 @@ blockquote {
 
 #not-found {
     width: 960px;
+    height: 200px;
     padding: 20px 30px 50px 30px;
     margin: 0 auto;
     position: relative;
-    h1 { color: #AC0649; text-shadow: 0 1px 0 #fff; }
+    h1 {
+        color: #333;
+        font-size: 2em;
+        text-align: center;
+        font-family: 'ChunkFive Regular', Arial, Helvetica, sans-serif;
+        text-shadow: 0 1px 0 #fff;
+    }
 }
 
 /* END Container */
