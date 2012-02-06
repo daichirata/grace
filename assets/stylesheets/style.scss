@@ -112,7 +112,7 @@ blockquote {
             transition: all 200ms linear;
         }
         a:hover{
-            font-size: 3em;
+            font-size: 90px;
         }
     }
     p {
@@ -188,7 +188,7 @@ blockquote {
                 -moz-border-radius: 5px;
                 -webkit-border-radius: 5px;
             }
-            span { font-size: 1.5em; }
+            span { font-size: 150%; }
         }
         .body {
             p {
@@ -212,16 +212,16 @@ blockquote {
                 border-bottom: 3px  solid #A3443E;
             }
             .read-more {
-                font-size: 110%;
-                text-align: right;
                 color: white;
-                background: #333;
+                font-size: 110%;
                 width: 90px;
                 float: right;
                 margin-top: 20px;
                 margin-bottom: 20px;
+                padding: 10px 30px;
+                text-align: right;
+                background: #333;
                 display: block;
-                padding: 0.5em 1.5em;
                 border: 1px solid white;
                 border-radius: 5px;
                 -webkit-border-radius: 5px;
@@ -253,6 +253,7 @@ blockquote {
         font-family: 'ChunkFive Regular', Arial, Helvetica, sans-serif;
     }
     a {
+        font-size: 110%;
         text-decoration: none;
     }
     li {

@@ -104,7 +104,7 @@ blockquote {
       -o-transition: all 200ms linear;
       transition: all 200ms linear; }
     #header-top h1 a:hover {
-      font-size: 3em; }
+      font-size: 90px; }
   #header-top p {
     margin-top: 0;
     color: #666;
@@ -169,7 +169,7 @@ blockquote {
         -moz-border-radius: 5px;
         -webkit-border-radius: 5px; }
       #container article.entry .meta-date span {
-        font-size: 1.5em; }
+        font-size: 150%; }
     #container article.entry .body p {
       font-size: 15px;
       line-height: 2em;
@@ -187,16 +187,16 @@ blockquote {
       margin: 35px 0 15px 0;
       border-bottom: 3px  solid #A3443E; }
     #container article.entry .body .read-more {
-      font-size: 110%;
-      text-align: right;
       color: white;
-      background: #333;
+      font-size: 110%;
       width: 90px;
       float: right;
       margin-top: 20px;
       margin-bottom: 20px;
+      padding: 10px 30px;
+      text-align: right;
+      background: #333;
       display: block;
-      padding: 0.5em 1.5em;
       border: 1px solid white;
       border-radius: 5px;
       -webkit-border-radius: 5px;
@@ -220,6 +220,7 @@ blockquote {
     font-size: 2em;
     font-family: 'ChunkFive Regular', Arial, Helvetica, sans-serif; }
   #recent-entries a, #related-entries a {
+    font-size: 110%;
     text-decoration: none; }
   #recent-entries li, #related-entries li {
     margin-bottom: 10px; }
