@@ -6,12 +6,13 @@
         </div>
         <h1><%= @entry.title %></h1>
         <p class="meta">
-            Tags <%= @entry.tags.map{|tag| %Q| <a href="#{tag.link}">#{tag.name}</a> |}.join(",") %>
-            by <span class="author vcard"><a href="#"><%= @entry.user.try(:name) %></a></span>
-            on <time><%= @entry.created_at.to_date %></time>
-            <% if logged_in? %>
-              <a href="<%= @entry.edit_link %>"><%= t('edit') %></a>
-            <% end %>
+          <span>Category: <a href="<%= @entry.category.link %>"><%= @entry.category.title %></a></span>
+          <span>Tags: <%= @entry.tags.map{|tag| %Q|<a href="#{tag.link}">#{tag.name}</a>|}.join(", ") %></span>
+          by <span class="author vcard"><a href="#"><%= @entry.user.name %></a></span>
+          on <time><%= @entry.created_at.to_date %></time>
+          <% if logged_in? %>
+            <a href="<%= @entry.edit_link %>"><%= t('edit') %></a>
+          <% end %>
         </p>
     </header>
     <div class="body">

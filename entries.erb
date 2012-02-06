@@ -1,5 +1,5 @@
 <% @posts.each do |post| %>
-    <article class="entry mbt120">
+    <article class="entry margin-entries clearfix">
         <header class="title">
             <div class="meta-date">
               <p><%= post.created_at.year %><br>
@@ -7,7 +7,8 @@
             </div>
             <h1><a href="<%= post.link %>"><%= post.title %></a></h1>
             <p class="meta">
-                Tags <%= post.tags.map{|tag| %Q|<a href="#{tag.link}">#{tag.name}</a>|}.join(", ") %>
+                <span>Category: <a href="<%= post.category.link %>"><%= post.category.title %></a></span>
+                <span>Tags: <%= post.tags.map{|tag| %Q|<a href="#{tag.link}">#{tag.name}</a>|}.join(", ") %></span>
                 by <span class="author vcard"><a href="#"><%= post.user.name %></a></span>
                 on <time><%= post.created_at.to_date %></time>
                 <% if logged_in? %>

@@ -91,10 +91,6 @@ blockquote {
     }
 }
 
-.mbt120 {
-    margin-bottom: 120px;
-}
-
 /* Header */
 
 #header-top {
@@ -134,7 +130,13 @@ blockquote {
 #container {
     width: 960px;
     margin: 0 auto;
+    .margin-entries {
+        margin-bottom: 30px;
+    }
     article.entry {
+        /* background: white; */
+        /* box-shadow: 0px 0px 5px #9eafc1; */
+        /* border-radius: 5px; */
         padding: 20px 90px 40px;
         position: relative;
         .title {
@@ -151,9 +153,11 @@ blockquote {
             }
         }
         .meta {
-            margin: 0 0 30px;
+            margin: 0 0 20px;
+            padding-bottom: 20px;
             display: block;
             text-align: right;
+            border-bottom: 1px #AAA dashed;
         }
         .meta-date {
             background: white;
@@ -246,6 +250,12 @@ blockquote {
     h1 {
         font-size: 2em;
         font-family: 'ChunkFive Regular', Arial, Helvetica, sans-serif;
+    }
+    a {
+        text-decoration: none;
+    }
+    li {
+        margin-bottom: 10px;
     }
 }
 

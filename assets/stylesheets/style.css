@@ -85,9 +85,6 @@ blockquote {
     color: #aaa;
     margin-left: 5px; }
 
-.mbt120 {
-  margin-bottom: 120px; }
-
 /* Header */
 #header-top {
   text-align: left;
@@ -119,7 +116,12 @@ blockquote {
 #container {
   width: 960px;
   margin: 0 auto; }
+  #container .margin-entries {
+    margin-bottom: 30px; }
   #container article.entry {
+    /* background: white; */
+    /* box-shadow: 0px 0px 5px #9eafc1; */
+    /* border-radius: 5px; */
     padding: 20px 90px 40px;
     position: relative; }
     #container article.entry .title h1 {
@@ -133,9 +135,11 @@ blockquote {
       #container article.entry .title h1 a:hover {
         color: #666; }
     #container article.entry .meta {
-      margin: 0 0 30px;
+      margin: 0 0 20px;
+      padding-bottom: 20px;
       display: block;
-      text-align: right; }
+      text-align: right;
+      border-bottom: 1px #AAA dashed; }
     #container article.entry .meta-date {
       background: white;
       padding: 7px;
@@ -214,6 +218,10 @@ blockquote {
   #recent-entries h1, #related-entries h1 {
     font-size: 2em;
     font-family: 'ChunkFive Regular', Arial, Helvetica, sans-serif; }
+  #recent-entries a, #related-entries a {
+    text-decoration: none; }
+  #recent-entries li, #related-entries li {
+    margin-bottom: 10px; }
 
 #not-found {
   width: 960px;
