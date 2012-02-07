@@ -1,22 +1,37 @@
-<article class="entry">
-    <header class="title">
-        <div class="meta-date">
-            <p><%= @entry.created_at.year %><br>
-            <span><%= @entry.created_at.month %>/<%= @entry.created_at.day %></span></p>
+<article class="entry mgn-btm pdg-btm">
+    <div class="ribbon-wrapper">
+        <div class="ribbon-front">
+            <div class="meta-date">
+                <p class="day"><%= @entry.created_at.day %></p>
+                <p class="year-month"><%= @entry.created_at.month %>/<%= @entry.created_at.year %></p>
+            </div>
         </div>
+        <div class="ribbon-edge-topleft"></div>
+        <div class="ribbon-edge-topright"></div>
+        <div class="ribbon-edge-bottomleft"></div>
+        <div class="ribbon-edge-bottomright"></div>
+        <div class="ribbon-back-left"></div>
+        <div class="ribbon-back-right"></div>
+    </div>
+    <header class="title">
         <h1><%= @entry.title %></h1>
         <p class="meta">
-          <span>Category: <a href="<%= @entry.category.try(:link) %>"><%= @entry.category.try(:title) %></a></span>
-          <span>Tags: <%= @entry.tags.map{|tag| %Q|<a href="#{tag.link}">#{tag.name}</a>|}.join(", ") %></span>
-          by <span class="author vcard"><a href="#"><%= @entry.user.name %></a></span>
-          on <time><%= @entry.created_at.to_date %></time>
-          <% if logged_in? %>
-            <a href="<%= @entry.edit_link %>"><%= t('edit') %></a>
-          <% end %>
+            <span>Category: <a href="<%= @entry.category.try(:link) %>"><%= @entry.category.try(:title) %></a></span>
+            <span>Tags: <%= @entry.tags.map{|tag| %Q|<a href="#{tag.link}">#{tag.name}</a>|}.join(", ") %></span>
+            by <span class="author vcard"><a href="#"><%= @entry.user.name %></a></span>
+            on <time><%= @entry.created_at.to_date %></time>
+            <% if logged_in? %>
+              <a href="<%= @entry.edit_link %>"><%= t('edit') %></a>
+            <% end %>
         </p>
     </header>
     <div class="body">
         <%= @entry.body %>
+    </div>
+
+    <div class="social-button">
+      <%= grace_hatena_button_to(@entry) %>
+      <%= grace_tweet_button_to(@entry) %>
     </div>
 </article><!-- END Article -->
 

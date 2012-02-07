@@ -1,11 +1,14 @@
 /*
+
     Name: Grace
 
-Date: Jan 2012
+    Date: Jan 2012
     Version: 1.0
     Author: Daichi Hirata
     Author URI: http://a-newcomer.com
+
 */
+
 @charset "UTF-8";
 
 @font-face {
@@ -15,12 +18,9 @@ Date: Jan 2012
 }
 
 body {
-    border-top: 3px solid #333;
-    font-family: "メイリオ",Meiryo,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro", Osaka,sans-serif;
-    color: #333;
-    /* text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2); */
+    font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro", Osaka,sans-serif;
     background: #EEE url(../images/bg.gif) repeat fixed;
-
+    border-top: 8px solid #333;
 }
 
 .clearfix:after {
@@ -50,6 +50,7 @@ pre {
     white-space: pre;
     word-wrap: break-word;
 }
+
 pre, code { font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace; }
 
 blockquote {
@@ -59,8 +60,11 @@ blockquote {
 }
 
 .pagenation {
+    display: block;
+    margin: 0 auto;
     height: 40px;
     a { text-decoration: none; }
+    ul { margin: 0; padding: 0;}
     li {
         float: left;
         list-style: none;
@@ -94,13 +98,12 @@ blockquote {
 /* Header */
 
 #header-top {
-    text-align: left;
-    margin: 0 0 1px;
     text-align: center;
     text-transform: uppercase;
+    padding: 60px 0 90px 0;
     h1 {
         font-family: 'ChunkFive Regular', Arial, Helvetica, sans-serif;
-        margin-bottom: 0;
+        margin: 0;
         a {
             color: #292929;
             text-decoration: none;
@@ -116,8 +119,8 @@ blockquote {
         }
     }
     p {
-        margin-top: 0;
         color: #666;
+        margin: 0;
         font-size: 18px;
         letter-spacing: 2px;
     }
@@ -130,19 +133,26 @@ blockquote {
 #container {
     width: 960px;
     margin: 0 auto;
-    .margin-entries {
-        margin-bottom: 80px;
+    .mgn-btm {
+        margin-bottom: 60px !important;
+    }
+    .pdg-btm {
+        padding-bottom: 80px !important;
     }
     article.entry {
-        /* background: white; */
-        /* box-shadow: 0px 0px 5px #9eafc1; */
-        /* border-radius: 5px; */
-        padding: 20px 90px 40px;
+        background: white;
+        padding: 25px 90px 20px 100px;
         position: relative;
+        border: 1px solid #ccc;
+        box-shadow: 0px 0px 4px #e2e0dd;
+        -webkit-box-shadow: 0px 0px 4px #e2e0dd;
+        -moz-box-shadow: 0px 0px 4px #e2e0dd;
+        /* border-radius: 5px; */
         .title {
             h1 {
-                margin-bottom: 0;
+                color: #333;
                 font-size: 200%;
+                margin: 0;
                 text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
                 a {
                     color: #333;
@@ -153,50 +163,22 @@ blockquote {
             }
         }
         .meta {
-            font-size: 13px;
+            font-size: 80%;
             margin: 0 0 20px;
             padding-bottom: 10px;
             display: block;
             text-align: right;
             border-bottom: 1px #AAA dashed;
         }
-        .meta-date {
-            background: white;
-            padding: 7px;
-            position: absolute;
-            top: 50px;
-            left: -20px;
-            width: 72px;
-            height: 60px;
-            -moz-box-shadow: 2px 2px 4px #999, -2px -2px 4px #999;
-            -webkit-box-shadow: 2px 2px 4px #999, -2px -2px 4px #999;
-            box-shadow: 2px 2px 4px #999, -2px -2px 4px #999;
-            border-radius: 10px;
-            -moz-border-radius: 10px;
-            -webkit-border-radius: 10px;
-            p {
-                background: #333;
-                color: white;
-                display: block;
-                font-family: Georgia, "Times New Roman", Times, serif;
-                font-weight: bold;
-                margin-top: 0;
-                text-align: center;
-                width: 72px;
-                height: 60px;
-                border-radius: 5px;
-                -moz-border-radius: 5px;
-                -webkit-border-radius: 5px;
-            }
-            span { font-size: 150%; }
-        }
         .body {
             p {
+                color: #666;
                 font-size: 15px;
-                line-height: 2em;
-                margin: 15px 0;
+                line-height: 1.8;
+                margin: 0 0 15px 0;
             }
             h1,h2,h3,h4,h5,h6 {
+                color: #363636;
                 font-weight: normal;
             }
             h1, h2 {
@@ -208,46 +190,43 @@ blockquote {
             h3, h4, h5, h6 {
                 font-size: 160%;
                 padding: 5px 0 5px 10px;
-                margin: 35px 0 15px 0;
+                margin: 20px 0 5px 0;
                 border-bottom: 3px  solid #A3443E;
             }
             .read-more {
-                color: white;
-                font-size: 110%;
-                width: 90px;
-                float: right;
-                margin-top: 20px;
-                margin-bottom: 20px;
+                width: 100px;
+                font-size: 120%;
+                margin: 20px 0;
                 padding: 10px 30px;
                 text-align: right;
-                background: #333;
+                text-decoration: underline;
+                float: right;
                 display: block;
-                border: 1px solid white;
-                border-radius: 5px;
-                -webkit-border-radius: 5px;
-                -moz-border-radius: 5px;
-                text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-                border-image: initial;
+            }
+            .read-more:hover {
+                text-shadow: none;
             }
         }
         .thumbnail {
             float: left;
             padding-right: 2em;
             img {
-                -webkit-box-shadow: rgba(0, 0, 0, 0.796875) 0px 0px 8px;
-                box-shadow: rgba(0, 0, 0, 0.796875) 0px 0px 8px;
+                padding: 10px;
+                border: 2px solid #c2c2c2;
             }
         }
-        hr {
-            border-top: 1px #CCC;
-            height: 20px;
-            color:#FFFFFF;
+        .social-button {
+            position: absolute;
+            bottom: 20px;
+        }
+        .social-button-header {
+            display: inline;
         }
     }
 }
 
 #recent-entries, #related-entries {
-    margin-bottom: 80px;
+    margin-bottom: 60px;
     h1 {
         font-size: 2em;
         font-family: 'ChunkFive Regular', Arial, Helvetica, sans-serif;
@@ -303,6 +282,7 @@ blockquote {
                     color: #EDECEC;
                     border-bottom: 1px solid #676767;
                     font-family: 'ChunkFive Regular', Arial, Helvetica, sans-serif;
+                    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
                     text-transform: uppercase;
                     line-height: 20px;
                     margin: 0 0 15px;
@@ -470,4 +450,126 @@ ul.tagCloud li.level6 a {
 /* オンマウス */
 ul.tagCloud li a:hover {
 	color: #CCC !important;
+}
+
+/*--------------------------------------
+	Syntax Highlighter
+---------------------------------------*/
+
+.toolbar {
+    display:none;
+}
+
+/*--------------------------------------
+	Ribbon Style
+---------------------------------------*/
+
+.ribbon-wrapper {
+	position: absolute;
+    top: 30px;
+    left: 0px;
+}
+
+.ribbon-front {
+    width: 85px;
+	background-color: #333;
+	height: 55px;
+	position: relative;
+	left:-10px;
+	z-index: 2;
+    .meta-date{
+        text-align: right;
+        p {
+            color: #ccc;
+            margin: 0;
+            position: absolute;
+            right: 0;
+            padding-right: 5px;
+        }
+        p.day {
+            font-size: 1.5em;
+        }
+        p.year-month {
+            font-size: 0.8em;
+            bottom: 0;
+            margin: 0;
+        }
+    }
+
+}
+
+.ribbon-front,
+.ribbon-back-left,
+.ribbon-back-right
+{
+	-moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	-khtml-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	-webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	-o-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+}
+
+.ribbon-edge-topleft,
+.ribbon-edge-topright,
+.ribbon-edge-bottomleft,
+.ribbon-edge-bottomright {
+	position: absolute;
+	z-index: 1;
+	border-style:solid;
+	height:0px;
+	width:0px;
+}
+
+.ribbon-edge-topleft,
+.ribbon-edge-topright {
+}
+
+.ribbon-edge-bottomleft,
+.ribbon-edge-bottomright {
+	top: 40px;
+}
+
+.ribbon-edge-topleft,
+.ribbon-edge-bottomleft {
+	left: -10px;
+	border-color: transparent #111 transparent transparent;
+}
+
+.ribbon-edge-topleft {
+	top: -10px;
+	border-width: 10px 10px 0 0;
+}
+.ribbon-edge-bottomleft {
+	border-width: 0 10px 0px 0;
+}
+
+.ribbon-edge-topright,
+.ribbon-edge-bottomright {
+	left: 100px;
+	border-color: transparent transparent transparent #111;
+}
+
+.ribbon-edge-topright {
+	top: 0px;
+	border-width: 0px 0 0 0px;
+}
+.ribbon-edge-bottomright {
+	border-width: 0 0 0px 0px;
+}
+
+.ribbon-back-left {
+	position: absolute;
+	top: -10px;
+	left: -30px;
+	width: 30px;
+	height: 55px;
+	background-color: #666;	z-index: 0;
+}
+
+.ribbon-back-right {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 0px;
+	height: 40px;
+	z-index: 0;
 }
