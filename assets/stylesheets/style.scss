@@ -228,6 +228,7 @@ blockquote {
 #recent-entries, #related-entries {
     margin-bottom: 60px;
     h1 {
+        color: #333;
         font-size: 2em;
         font-family: 'ChunkFive Regular', Arial, Helvetica, sans-serif;
     }
@@ -484,7 +485,7 @@ ul.tagCloud li a:hover {
             margin: 0;
             position: absolute;
             right: 0;
-            padding-right: 5px;
+            padding-right: 8px;
         }
         p.day {
             font-size: 1.5em;

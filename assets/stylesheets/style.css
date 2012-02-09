@@ -195,6 +195,7 @@ blockquote {
 #recent-entries, #related-entries {
   margin-bottom: 60px; }
   #recent-entries h1, #related-entries h1 {
+    color: #333;
     font-size: 2em;
     font-family: 'ChunkFive Regular', Arial, Helvetica, sans-serif; }
   #recent-entries a, #related-entries a {
@@ -404,7 +405,7 @@ ul.tagCloud li a:hover {
       margin: 0;
       position: absolute;
       right: 0;
-      padding-right: 5px; }
+      padding-right: 8px; }
     .ribbon-front .meta-date p.day {
       font-size: 1.5em; }
     .ribbon-front .meta-date p.year-month {
